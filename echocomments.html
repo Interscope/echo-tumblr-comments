@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!-- DEFAULT COLORS -->
+    <meta name="color:Background" content="#fff"/>
+    <meta name="color:Title" content="#222"/>
+    <meta name="color:Description" content="#999"/>
+    <meta name="color:Text" content="#404040"/>
+    <meta name="color:Link" content="#c03030"/>
+    <!-- END DEFAULT COLORS -->
+    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="icon" href="{Favicon}"/>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+  <link rel="stylesheet" href="http://test.allamericanrejects.interscope.com/_local/css/tumblrEcho.css">
+  <meta name="viewport" content="width=575"/> <!-- iPhone -->
+  <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+  <style type="text/css">
+
+body {background:url(http://cache.umusic.com/web_assets/AAR/tumblr/bg.jpg) center top; background-attachment:fixed; font-family:"helvetica neue", helvetica, arial, sans-serif; color:#cecece;}
+
+
+
+a{color:#fff;}
+#container{margin:auto;width:95%;}
+h1{margin:0px;padding:0px;}
+h1 a{float:left;text-decoration:none;text-indent:-9999em;display:block;margin:0px;padding:20px 10px 0px 0px; background:url(http://cache.umusic.com/web_assets/AAR/tumblr/logo.png) 0 0 no-repeat; width:368px; height:180px;}
+a#submitBTN{float:left; margin:20px 0 0 10px;}
+h2{font-weight:normal;font-size:14px;padding:35px 0px 0px 0px;margin:0px;}
+.box{width:95%;background:#000;padding:0px 10px 0px 10px;margin-bottom:10px;}
+.content{padding:10px;}
+.date{background:#fb1378; color:#000; float:right;padding:10px;text-align:center;}
+.date_quote{background:#13fb54; color:#fff; float:right;padding:10px;text-align:center;}
+.date_link{background:#fb6213; color:#fff; float:right;padding:10px;text-align:center;}
+.date_conv{background:#df111e; color:#fff; float:right;padding:10px;text-align:center;}
+.date_photo{background:#1399fb; color:#fff; float:right;padding:10px;text-align:center;}
+.date_audio{background:#000; color:#fff; float:right;padding:10px;text-align:center;}
+.date_video{background:#748768; color:#fff; float:right;padding:10px;text-align:center;}
+
+.photo{float:left;padding:0px 10px 10px 0px;}
+.video{float:left;padding:0px 10px 10px 0px;}
+.photo_caption{padding:10px 10px;background:none; margin-left:5px;}
+
+.quote{background:url("http://pixelspread.com/tumblr/4/quote.png") no-repeat;padding:5px 0px 5px 40px;}
+
+ .conv ul {
+      list-style: none;
+      margin-top:10px;
+      padding: 0;
+    }
+    
+    .conv ul li {
+    background:#222;
+      padding: 5px;
+      margin-bottom:1px;
+    }
+    
+    .conv li .person {
+      font-weight: bold;
+     
+    }
+
+.source{color:#999;}
+.link{display:block;margin-top:15px;padding:10px;background:#222;text-decoration:none;}
+.link:hover{background:#333;}
+
+.clear{clear:both;}
+#top a{float:right;text-decoration:none;display:block;color:#fff;margin:10px 25px 0px 0px;padding:5px;background:#000;}
+
+#prev-next {color:#fff;}
+#prev-next a{padding:5px;background:#000;text-decoration:none; }
+
+#footer{padding:10px;color:#000;}
+#footer a{color:#000;}
+
+</style>
+</head>
+
+<body>
+<div id="container">
+<div id="top"><a href="/rss">RSS</a><a href="/archive">Archive</a></div>
+<h1><a href="/">{Title}</a></h1><h2>{Description}</h2>
+<a href="/submit" id="submitBTN"><img src="http://cache.umusic.com/web_assets/aar/tumblr/submitBTN.jpg" border="0" /></a>
+<div class="clear"></div>
+
+{block:Posts}
+
+
+  {block:Regular}
+<div class="box">
+
+<div class="date">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+{block:Title}<h3>{Title}</h3>{/block:Title}
+            {Body}
+</div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+  {/block:Regular}
+  
+  
+   {block:Quote}
+   <div class="box">
+
+<div class="date_quote">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+<div class="quote">
+   {Quote}</span>
+            {block:Source}<span class="source">{Source}</span>{/block:Source}
+            </div>
+</div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+   
+    {/block:Quote}
+    
+    
+        {block:Link}
+        
+          <div class="box">
+
+<div class="date_link">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+ <a href="{URL}" class="link">{Name}</a>
+            {block:Description}{Description}{/block:Description}
+            </div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+       {/block:Link}
+       
+       
+        {block:Conversation}
+        
+         <div class="box">
+
+<div class="date_conv">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+<div class="conv">   
+    {block:Title}<h3>{Title}</h3>{/block:Title}
+            <ul>
+              {block:Lines}
+              <li>
+                {block:Label}<span class="person">{Label}</span>{/block:Label}
+                <span class="line">{Line}</span></li>
+              {/block:Lines}
+            </ul>
+            </div>    </div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+     
+                   
+                  {/block:Conversation}
+                  
+                  
+                  
+                   {block:Photo}
+                   
+                         <div class="box">
+
+<div class="date_photo">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+   
+  
+            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo"/>{LinkCloseTag}
+            <div class="photo_caption">
+            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+            </div>
+              </div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+
+{/block:Photo}
+
+
+
+
+          {block:Audio}
+          
+           <div class="box">
+
+<div class="date_audio">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+   
+     {AudioPlayerBlack}
+                  {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+                  
+              </div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+         {/block:Audio}
+
+
+{block:Video}
+
+           <div class="box">
+
+<div class="date_video">{DayOfMonth}<br/>{ShortMonth}<br/>
+<a href="{Permalink}"><img src="http://pixelspread.com/tumblr/4/permalink.png" border="0"/></a></div>
+
+<div class="content">
+   <div class="video">
+ {Video-500}
+ </div>
+    <div class="photo_caption">
+            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+</div>
+              </div>
+
+
+<div class="clear"></div>
+<div class="ecComments" rel="{Permalink}"></div>
+</div>
+       
+       
+                     
+          
+            {/block:Video}
+{/block:Posts}
+
+<!-- Capture-Echo -->
+<script type="text/javascript" src="http://cdn.echoenabled.com/clientapps/v2/jquery-pack.js"></script>
+<script type="text/javascript" src="http://cache.umusic.com/web_assets/tumblr/js/capture-echo.js"></script>
+<style type="text/css">
+    .echo-counter-echo2{float:left;}
+	.echo-counter-echo2, .echo-counter-label{ font-family: Arial,sans-serif; font-size: 14px;}
+    .ecComments {padding-bottom: 10px;}
+	.echo-auth-or, .echo-auth-signup{display:none;}
+</style>
+<script type="text/javascript">
+  CAPTURE.ECHO.init({
+	capture_addr: "profile.universalmusic.com",
+    capture_client_id: "k5nsur6yfeavcrfm379nkub6ts8n7hp4",
+    serverBaseURL: "https://backplane1.janrainbackplane.com/v1.2",
+    busName: "umg",
+    appkey: "prod.umg",
+    sso_server: "sso.universalmusic.com",
+    rpx_app_id: "khocbmhbelaifamoohjp"
+	
+  });
+</script>
+<!-- END Capture-Echo -->
+
+          <div class="clear"></div>
+          <div id="prev-next">
+          {block:NextPage}<a href="{NextPage}" id="prev">&#8592; Previous</a>{/block:NextPage}
+          Page {CurrentPage} of {TotalPages}
+          {block:PreviousPage}<a href="{PreviousPage}" id="next">Next &#8594;</a>{/block:PreviousPage}
+        </div>
+        
+        <div id="footer">
+      <a href="http://tumblr.com/">Tumblr</a> powered
+      <a href="http://pixelspread.com/">Pixelspread</a> designed
+      <a href="/rss">RSS</a> syndicated     
+        </div> 
+
+
+
+
+
+</div>
+</body>
